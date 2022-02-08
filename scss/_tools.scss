@@ -1,0 +1,38 @@
+// Mixins
+// =========================================================================
+
+// Hover, active and focus status
+@mixin hocus() {
+
+    &:hover,
+    &:active,
+    &:focus {
+        @content;
+    }
+}
+
+// Flexbox
+@mixin flex($direction: row, $wrap: nowrap, $justify-content: center, $align-items: center, $align-content: normal) {
+    display: flex;
+    flex-flow: $direction $wrap;
+    justify-content: $justify-content;
+    align-items: $align-items;
+    align-content: $align-content;
+}
+
+// Pseudo element
+@mixin pseudo($selector: after, $width: 100%, $height: 100%, $top: 0, $left: 0, $relative:true, $content:null) {
+    @if ($relative==true) {
+        position: relative;
+    }
+
+    &:#{$selector} {
+        position: absolute;
+        width: $width;
+        height: $height;
+        top: $top;
+        left: $left;
+        content: "#{$content}";
+        @content;
+    }
+}

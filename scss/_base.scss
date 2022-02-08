@@ -1,0 +1,62 @@
+@use 'settings'as *;
+@use 'tools'as *;
+
+// Focus
+*:focus {
+    position: relative; // Avoid focus shadow behind other divs
+    z-index: $zindex-focus-shadow;
+    outline: none;
+    box-shadow: 0 0 3px 3px $primary;
+}
+
+// Body
+body {
+    background-color: $white;
+    color: $gray-900;
+    font-family: $font-family-base;
+    font-size: $font-size-base;
+}
+
+// Links
+a {
+    color: $primary;
+
+    @include hocus {
+        color: $primary-dark;
+    }
+}
+
+// Headings
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 500;
+    line-height: $line-height-sm;
+}
+
+h1 {
+    font-size: $font-size-900;
+}
+
+h2 {
+    font-size: $font-size-800;
+}
+
+h3 {
+    font-size: $font-size-700;
+}
+
+h4 {
+    font-size: $font-size-600;
+}
+
+h5 {
+    font-size: $font-size-500;
+}
+
+h6 {
+    font-size: $font-size-400;
+}
